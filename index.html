@@ -15,10 +15,32 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
 .typingarea{margin:0 25px 20px;border:1px solid #e5e8ee;border-radius:11px;background:#fbfcfd;padding:22px 23px;min-height:160px;position:relative;transition:border-color .2s,box-shadow .2s}.typingarea:focus-within{border-color:#aabaff;box-shadow:0 0 0 3px #315efb0b}.passage{font-size:19px;line-height:1.95;letter-spacing:.05px;color:#a0a7b2;user-select:none;overflow-wrap:anywhere}.passage .correct{color:#222b39}.passage .incorrect{color:var(--red);background:#fff0f0;border-radius:2px}.passage .cursor{border-left:2px solid var(--accent);margin-left:-1px;animation:blink 1s step-end infinite}.typingarea textarea{position:absolute;inset:0;width:100%;height:100%;opacity:0;resize:none;border:0;outline:0;cursor:text}
 .underrow{display:flex;justify-content:space-between;align-items:center;padding:0 26px 21px;gap:15px}.status{font-size:12px;color:#8993a1}.status b{color:#515c6b;font-weight:650}.buttons{display:flex;align-items:center;gap:9px}.btn{border-radius:8px;padding:10px 15px;font-size:12px;font-weight:750;border:1px solid #e0e4eb;background:white;color:#495364}.btn:hover{background:#f7f8fa}.btn.primary{background:var(--accent);border-color:var(--accent);color:white;padding:10px 18px}.btn.primary:hover{background:var(--accent2)}
 .bottomgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.info{background:white;border:1px solid var(--line);border-radius:12px;padding:17px 19px;display:flex;align-items:flex-start;gap:13px}.infoicon{width:32px;height:32px;border-radius:9px;background:#f0f3ff;color:var(--accent);display:grid;place-items:center;flex-shrink:0;font-weight:800}.info strong{font-size:13px;display:block}.info p{font-size:12px;color:#87909d;margin:3px 0 0}.info a{color:var(--accent);text-decoration:none;font-weight:700}
+
+.about-section{max-width:900px;margin:0 auto 58px;scroll-margin-top:100px}
+.about-card{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:clamp(22px,4vw,36px)}
+.about-kicker{font-size:10px;text-transform:uppercase;letter-spacing:1.7px;color:var(--accent);font-weight:800}
+.about-card h2{font-size:clamp(25px,4vw,32px);letter-spacing:-1px;margin:8px 0 12px}
+.about-card p{color:#737d8b;font-size:14px;line-height:1.85;margin:0 0 13px}
+.about-card p strong{color:#303949}
+.about-divider{height:1px;background:var(--line);margin:25px 0}
+.rating-title{font-size:15px;font-weight:750;margin-bottom:5px}
+.rating-copy{font-size:12px!important;margin-bottom:12px!important}
+.rating-stars{display:flex;align-items:center;gap:7px;margin:9px 0 14px}
+.rating-star{border:0;background:#f3f5f8;color:#b8c0cc;width:43px;height:43px;border-radius:10px;font-size:25px;line-height:1;transition:transform .15s,background .15s,color .15s}
+.rating-star:hover{transform:translateY(-2px)}.rating-star.selected{color:#f0a629;background:#fff7e8}
+.rating-submit{border:0;background:var(--accent);color:#fff;border-radius:8px;padding:10px 17px;font-size:12px;font-weight:750}
+.rating-submit:disabled{opacity:.45;cursor:not-allowed}
+.rating-note{font-size:11px;color:#8b94a1;margin-top:9px;min-height:18px}
+.contact-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:13px}
+.contact-link{display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #e5e8ee;border-radius:9px;color:#465164;text-decoration:none;font-size:12px;font-weight:700;background:#fff}
+.contact-link:hover{border-color:#b8c5ff;color:var(--accent)}
+
+.challenge-panel{max-width:900px;margin:0 auto 22px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}
+.challenge-panel.hidden{display:none}.challenge-heading{font-size:17px;font-weight:760;margin:0 0 5px}.challenge-intro{font-size:12px;color:#87909d;margin:0 0 17px}.challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.challenge-card{border:1px solid #e5e8ee;border-radius:11px;padding:16px;background:#fff}.challenge-card h3{font-size:13px;margin:0 0 6px}.challenge-card p{font-size:12px;color:#87909d;min-height:38px;margin:0 0 13px}.challenge-card button{border:0;border-radius:8px;background:var(--accent);color:#fff;padding:9px 12px;font-size:12px;font-weight:750;width:100%}.challenge-card button:hover{background:var(--accent2)}
+@media(max-width:720px){.challenge-grid{grid-template-columns:1fr}.challenge-panel{padding:17px;margin-bottom:18px}}
+@media(max-width:720px){.about-section{margin-bottom:40px}.about-card{padding:22px 19px}.rating-star{width:41px;height:41px}.contact-list{display:grid;grid-template-columns:1fr}.contact-link{width:100%}}
 .footer{border-top:1px solid var(--line);padding:23px 0 30px;color:#9aa2ad;font-size:11px}.footerinner{display:flex;justify-content:space-between;gap:15px}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#202a3a;color:white;padding:11px 16px;border-radius:9px;font-size:13px;box-shadow:0 8px 30px #0002;display:none;z-index:30}.toast.show{display:block}@keyframes blink{50%{opacity:0}}
-
-.about-section{max-width:900px;margin:0 auto 58px}.about-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow)}.about-card h2{font-size:21px;letter-spacing:-.5px;margin:0 0 10px}.about-card p{color:#707b89;font-size:14px;margin:0 0 13px}.about-card h3{font-size:14px;margin:24px 0 10px}.rating-stars{display:flex;gap:8px;margin:10px 0}.rating-star{border:0;background:transparent;color:#c8ced8;font-size:30px;line-height:1;padding:3px}.rating-star.selected{color:#f2ad32}.rating-status{font-size:12px;color:#7b8491;min-height:18px}.contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.contact-link{display:inline-flex;align-items:center;gap:9px;padding:10px 13px;border:1px solid var(--line);border-radius:10px;color:#344052;text-decoration:none;font-size:13px;font-weight:650;background:#fff}.contact-link:hover{border-color:#cbd3df;background:#fafbfc}.contact-link svg{width:19px;height:19px;flex:none}.contact-link.whatsapp svg{color:#25D366}.contact-link.facebook svg{color:#1877F2}.contact-link.telegram svg{color:#229ED9}
 @media(max-width:720px){.wrap{padding:0 18px}.topbar{height:67px}.navlinks{display:none}.hero{padding:43px 0 28px}.testhead{align-items:flex-start;flex-direction:column}.settings{width:100%;justify-content:space-between}.settinglabel{display:none}.metrics{padding:18px 15px 15px}.typingarea{margin:0 14px 16px;padding:17px;min-height:180px}.passage{font-size:17px}.underrow{padding:0 15px 17px;align-items:flex-start;flex-direction:column}.buttons{width:100%}.buttons .btn{flex:1}.bottomgrid{grid-template-columns:1fr}.footerinner{flex-direction:column}.topactions{gap:5px}.signin{padding:8px 11px}}
 @media(max-width:390px){.hero h1{font-size:32px}.settings{gap:8px}.seg button{padding:7px 8px}.testhead{padding:18px}.metric strong{font-size:24px}}
 </style>
@@ -26,13 +48,13 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
 <body>
 <header class="topbar"><div class="wrap topinner">
 <a class="brand" href="#"><span class="brandmark">K.</span> keystudio</a>
-<nav class="navlinks"><a class="active" href="#test">Typing test</a><a href="#practice" onclick="switchMode('practice');return false">Practice</a><a href="#challenges" onclick="notify('Challenges will be available in the full build.');return false">Challenges</a><a href="#about-page">About</a></nav>
-<div class="topactions"><div class="selectwrap"><select class="lang" id="language" aria-label="Interface language" onchange="changeLanguage(this.value)"><option value="en">English</option><option value="bn">বাংলা</option></select></div><button class="signin" onclick="googleSignIn()">Sign in with Google</button><div class="avatar" title="Guest account">G</div></div>
+<nav class="navlinks"><a class="active" href="#test">Typing test</a><a href="#practice" onclick="switchMode('practice');return false">Practice</a><a href="#challenges" onclick="showChallenges();return false">Challenges</a><a href="#about">About</a></nav>
+<div class="topactions"><div class="selectwrap"><select class="lang" id="language" aria-label="Interface language" onchange="changeLanguage(this.value)"><option value="en">English</option><option value="bn">বাংলা</option></select></div><button class="signin" id="signinButton" onclick="googleSignIn()">Sign in with Google</button><div class="avatar" id="userAvatar" title="Guest account">G</div></div>
 </div></header>
 <main class="wrap">
 <section class="hero"><div class="eyebrow">A calmer way to get faster</div><h1>Make every keystroke<br><span style="color:var(--accent)">count.</span></h1><p>Build your typing speed with focused practice, clear feedback and a workspace that stays out of your way.</p></section>
 <section class="workspace" id="test">
-<div class="modebar"><button class="modebtn active" id="timedMode" onclick="switchMode('timed')">Time test</button><button class="modebtn" id="practiceMode" onclick="switchMode('practice')">Free practice</button><button class="modebtn" onclick="notify('Challenge mode is planned for the full website.')">Challenges</button></div>
+<div class="modebar"><button class="modebtn active" id="timedMode" onclick="switchMode('timed')">Time test</button><button class="modebtn" id="practiceMode" onclick="switchMode('practice')">Free practice</button><button class="modebtn" onclick="showChallenges()">Challenges</button></div>
 <div class="testcard">
 <div class="testhead"><div><div class="testtitle">Typing speed test</div><div class="testsubtitle" id="testSubtitle">Choose a duration and start typing</div></div>
 <div class="settings"><div><span class="settinglabel">Duration</span><div class="seg" id="duration"><button class="active" onclick="setDuration(30,this)">30 sec</button><button onclick="setDuration(60,this)">60 sec</button><button onclick="setDuration(120,this)">2 min</button></div></div></div>
@@ -43,54 +65,166 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
 </div>
 <div class="bottomgrid"><div class="info"><div class="infoicon">⌘</div><div><strong>Your results, your progress</strong><p>Sign in to keep your personal best and practice history across devices.</p></div></div><div class="info"><div class="infoicon">বাংলা</div><div><strong>Bangla typing practice</strong><p>Use Avro, Bijoy, Gboard or your preferred installed input method.</p></div></div></div>
 </section>
+<section class="challenge-panel hidden" id="challengesPanel">
+  <h2 class="challenge-heading">Typing challenges</h2>
+  <p class="challenge-intro">Choose an exercise and complete it in 60 seconds. Challenges work in guest mode too.</p>
+  <div class="challenge-grid" id="challengeGrid"></div>
+</section>
 </main>
-<section class="about-section" id="about-page" aria-labelledby="about-title">
-<div class="about-card">
-<h2 id="about-title">About This Page</h2>
-<p>Hey, it’s me — <strong>Unlogistix CH</strong>.</p>
-<p>This isn’t my real name, but since I can’t use my real name here, I’ve chosen Unlogistix CH as my identity.</p>
-<p>I built this website myself. I know it may not be perfect, but this is my very first website, and I’m still learning. I may not be an expert yet, but I’m doing my best to make something useful and enjoyable.</p>
-<h3>Enjoying the Website?</h3>
-<p>If you’ve used this website, I’d really appreciate it if you could leave a rating below. Your rating is a little motivation that inspires me to keep learning, improving, and building better things. Thank you for being here!</p>
-<div class="rating-stars" role="group" aria-label="Rate Keystudio from one to five stars">
-<button class="rating-star" type="button" data-rating="1" aria-label="1 star">★</button><button class="rating-star" type="button" data-rating="2" aria-label="2 stars">★</button><button class="rating-star" type="button" data-rating="3" aria-label="3 stars">★</button><button class="rating-star" type="button" data-rating="4" aria-label="4 stars">★</button><button class="rating-star" type="button" data-rating="5" aria-label="5 stars">★</button>
-</div>
-<button class="btn primary" id="submitRating" type="button" disabled>Submit rating</button>
-<div class="rating-status" id="ratingStatus" aria-live="polite">Choose a rating from 1 to 5 stars.</div>
-<h3>Want to Contact Me?</h3>
-<div class="contact-links">
-<a class="contact-link whatsapp" href="https://wa.me/15198047284" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.2 21.7h-.1c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.9 1 1-3.8-.2-.4a9.8 9.8 0 1 1 8.3 4.7Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-1-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.2-.3-.3-.6-.4Z"/></svg>WhatsApp</a>
-<a class="contact-link facebook" href="https://www.facebook.com/Unlogistix.CH" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.4c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.95.93-1.95 1.88v2.29h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z"/></svg>Facebook</a>
-<a class="contact-link telegram" href="https://t.me/UnlgistixOfficial28" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.4 1.6 1.5 9.7c-1.4.6-1.4 1.4-.2 1.8l5.3 1.7 2 6.2c.2.7.1 1 .8 1 .5 0 .8-.2 1.1-.5l2.6-2.5 5.4 4c1 .6 1.7.3 1.9-.9l3.5-17.1c.3-1.5-.6-2.2-1.5-1.8ZM8.1 12.8l11.8-7.4c.6-.4 1.1-.2.7.2L10.8 14l-.4 4.1-2.3-5.3Z"/></svg>Telegram</a>
-</div>
-</div>
+<section class="about-section" id="about">
+  <div class="about-card">
+    <div class="about-kicker">A note from the creator</div>
+    <h2>About This Page</h2>
+    <p><strong>Hey, it's me — Unlogistix CH!</strong></p>
+    <p>This isn't my real name. I can't use my real name here, so I've chosen <strong>Unlogistix CH</strong> as my identity.</p>
+    <p>I made this website myself. I know it may not be perfect, but this is my very first website, and I'm still learning. I may not be an expert yet, but I'm doing my best to create something useful and enjoyable.</p>
+    <div class="about-divider"></div>
+    <div class="rating-title">Enjoying the website?</div>
+    <p class="rating-copy">If you've used Keystudio, I'd really appreciate your rating. Your feedback is a little motivation that inspires me to keep learning, improving, and building better things. Thank you for being here!</p>
+    <div class="rating-stars" role="group" aria-label="Rate this website from one to five stars">
+      <button class="rating-star" type="button" data-rating="1" aria-label="1 star">★</button>
+      <button class="rating-star" type="button" data-rating="2" aria-label="2 stars">★</button>
+      <button class="rating-star" type="button" data-rating="3" aria-label="3 stars">★</button>
+      <button class="rating-star" type="button" data-rating="4" aria-label="4 stars">★</button>
+      <button class="rating-star" type="button" data-rating="5" aria-label="5 stars">★</button>
+    </div>
+    <button class="rating-submit" id="submitRating" type="button" disabled>Submit rating</button>
+    <div class="rating-note" id="ratingNote" aria-live="polite">Choose between 1 and 5 stars.</div>
+    <div class="about-divider"></div>
+    <div class="rating-title">Want to contact me?</div>
+    <div class="contact-list">
+      <a class="contact-link" href="https://wa.me/15198047284" target="_blank" rel="noopener noreferrer">WhatsApp <span>+1 (519) 804-7284</span></a>
+      <a class="contact-link" href="https://www.facebook.com/Unlogistix.CH" target="_blank" rel="noopener noreferrer">Facebook <span>Unlogistix CH</span></a>
+      <a class="contact-link" href="https://t.me/UnlgistixOfficial28" target="_blank" rel="noopener noreferrer">Telegram <span>@UnlgistixOfficial28</span></a>
+    </div>
+  </div>
 </section>
 <footer class="footer" id="about"><div class="wrap footerinner"><span>© 2026 keystudio. Made for focused practice.</span><span>English · বাংলা &nbsp;|&nbsp; Simple. Focused. Effective.</span></div></footer>
 <div class="toast" id="toast"></div>
 <script>
-const passages={en:"Great typing is not about rushing through every sentence. It is about finding a steady rhythm, staying accurate, and building a little more confidence with every practice session.",bn:"নিয়মিত অনুশীলন করলে বাংলা টাইপিংয়ের গতি ও নির্ভুলতা দুটোই বাড়ে। ধীরে শুরু করুন, ভুলগুলো খেয়াল করুন এবং প্রতিদিন একটু একটু করে এগিয়ে যান।"};
-let lang='en',duration=30,mode='timed',started=false,finished=false,left=30,clock=null,startAt=0;
+const passages={
+ en:[
+  "Great typing is not about rushing through every sentence. It is about finding a steady rhythm, staying accurate, and building a little more confidence with every practice session.",
+  "Small improvements become meaningful when you practice consistently. Focus on accuracy first, keep a comfortable rhythm, and let your speed grow naturally over time.",
+  "Technology gives us many ways to learn and create. A little focused practice each day can make everyday tasks easier and help you communicate with confidence."
+ ],
+ bn:[
+  "নিয়মিত অনুশীলন করলে বাংলা টাইপিংয়ের গতি ও নির্ভুলতা দুটোই বাড়ে। ধীরে শুরু করুন, ভুলগুলো খেয়াল করুন এবং প্রতিদিন একটু একটু করে এগিয়ে যান।",
+  "প্রতিদিন অল্প সময় অনুশীলন করলেও ধীরে ধীরে ভালো ফল পাওয়া যায়। প্রথমে নির্ভুলতার দিকে মনোযোগ দিন, তারপর স্বাভাবিকভাবেই টাইপিংয়ের গতি বাড়বে।",
+  "প্রযুক্তি আমাদের শেখা, কাজ করা এবং যোগাযোগের অনেক সুযোগ তৈরি করে। মনোযোগ দিয়ে অনুশীলন করলে প্রতিটি কাজ আরও সহজ হয়ে উঠতে পারে।"
+ ]
+};
+let lang='en',duration=30,mode='timed',started=false,finished=false,left=30,clock=null,startAt=0,currentText='',lastPassage=-1;
 const entry=document.getElementById('entry'),passage=document.getElementById('passage');
+const segmenter=typeof Intl!=='undefined'&&Intl.Segmenter?new Intl.Segmenter(undefined,{granularity:'grapheme'}):null;
+function chars(s){return segmenter?[...segmenter.segment(s)].map(x=>x.segment):Array.from(s)}
 function notify(s){const t=document.getElementById('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
-function changeLanguage(v){lang=v;reset();document.getElementById('speedLabel').textContent=lang==='bn'?'CHARACTERS / MIN':'WORDS / MIN';}
+const challengeSets={
+ en:[
+  {title:'Everyday Words',level:'Beginner',desc:'Build a steady rhythm with a friendly short passage.',text:'A good habit starts with one small step. Practice a little every day, stay patient, and enjoy the progress you make along the way.'},
+  {title:'Focus & Accuracy',level:'Intermediate',desc:'Train your accuracy while keeping a comfortable pace.',text:'Accuracy is the foundation of confident typing. Keep your eyes on the passage, use a relaxed rhythm, and correct mistakes by learning from them.'},
+  {title:'Digital Life',level:'Advanced',desc:'A longer passage with varied words and punctuation.',text:'Digital tools help us learn, communicate, and solve everyday problems. The best results come from thoughtful practice, clear attention, and consistent effort.'}
+ ],
+ bn:[
+  {title:'সহজ বাংলা',level:'Beginner',desc:'সহজ বাংলা বাক্য দিয়ে অনুশীলন শুরু করুন।',text:'নিয়মিত অনুশীলন করলে টাইপিংয়ের দক্ষতা বাড়ে। ধীরে শুরু করুন, নির্ভুলতার দিকে মনোযোগ দিন এবং প্রতিদিন একটু একটু করে এগিয়ে যান।'},
+  {title:'নির্ভুলতা',level:'Intermediate',desc:'ভুল কমিয়ে স্বাভাবিক গতিতে টাইপ করার অনুশীলন।',text:'ভালো টাইপিংয়ের জন্য গতি ও নির্ভুলতার মধ্যে ভারসাম্য রাখা জরুরি। মনোযোগ দিয়ে লিখুন এবং নিজের অগ্রগতি উপভোগ করুন।'},
+  {title:'প্রযুক্তির গল্প',level:'Advanced',desc:'কিছুটা দীর্ঘ বাংলা অনুচ্ছেদ টাইপ করে দেখুন।',text:'প্রযুক্তি আমাদের শেখা, কাজ করা এবং একে অপরের সঙ্গে যোগাযোগের নতুন সুযোগ তৈরি করে। প্রতিদিনের ছোট অনুশীলন ভবিষ্যতে বড় দক্ষতায় পরিণত হতে পারে।'}
+ ]
+};
+function showChallenges(){document.getElementById('challengesPanel').classList.remove('hidden');document.getElementById('challengesPanel').scrollIntoView({behavior:'smooth',block:'start'});renderChallenges()}
+function renderChallenges(){const grid=document.getElementById('challengeGrid');grid.innerHTML='';challengeSets[lang].forEach((c,i)=>{const card=document.createElement('article');card.className='challenge-card';const h=document.createElement('h3');h.textContent=c.title;const p=document.createElement('p');p.textContent=c.level+' · '+c.desc;const b=document.createElement('button');b.type='button';b.textContent='Start challenge';b.addEventListener('click',()=>loadChallenge(i));card.append(h,p,b);grid.append(card)})}
+function loadChallenge(i){const c=challengeSets[lang][i];document.getElementById('challengesPanel').classList.add('hidden');document.getElementById('test').scrollIntoView({behavior:'smooth',block:'start'});mode='timed';duration=60;document.getElementById('timedMode').classList.add('active');document.getElementById('practiceMode').classList.remove('active');document.getElementById('duration').style.opacity='1';document.getElementById('duration').style.pointerEvents='auto';document.querySelectorAll('#duration button').forEach(b=>b.classList.toggle('active',b.textContent.trim()==='60 sec'));reset();currentText=c.text;draw();document.getElementById('testSubtitle').textContent=c.title+' challenge · '+c.level+' · 60 seconds';notify(c.title+' challenge loaded. Start typing!')}
+
+function pickPassage(){const list=passages[lang];let i=Math.floor(Math.random()*list.length);if(list.length>1&&i===lastPassage)i=(i+1)%list.length;lastPassage=i;currentText=list[i]}
+function changeLanguage(v){lang=v;reset();if(!document.getElementById("challengesPanel").classList.contains("hidden"))renderChallenges()}
 function setDuration(n,el){duration=n;document.querySelectorAll('#duration button').forEach(b=>b.classList.remove('active'));el.classList.add('active');reset()}
 function switchMode(m){mode=m;document.getElementById('timedMode').classList.toggle('active',m==='timed');document.getElementById('practiceMode').classList.toggle('active',m==='practice');document.getElementById('duration').style.opacity=m==='practice'?'.35':'1';document.getElementById('duration').style.pointerEvents=m==='practice'?'none':'auto';reset()}
-function draw(){const val=entry.value,text=passages[lang];passage.replaceChildren();for(let i=0;i<text.length;i++){const s=document.createElement('span');s.textContent=text[i];if(i<val.length)s.className=val[i]===text[i]?'correct':'incorrect';else if(i===val.length)s.className='cursor';passage.appendChild(s)}}
-function update(){const val=entry.value,text=passages[lang];let correct=0;for(let i=0;i<val.length;i++)if(val[i]===text[i])correct++;const elapsed=Math.max(1,Math.floor((Date.now()-startAt)/1000));document.getElementById('wpm').textContent=lang==='bn'?Math.round(correct/elapsed*60):Math.round((correct/5)/(elapsed/60));document.getElementById('accuracy').textContent=(val.length?Math.round(correct/val.length*100):100)+'%'}
-function begin(){if(started||finished)return;started=true;startAt=Date.now();document.getElementById('status').innerHTML='<b>Test in progress.</b> Keep a steady rhythm.';if(mode==='timed')clock=setInterval(()=>{left--;document.getElementById('time').textContent=left;update();if(left<=0)finish()},1000)}
-function finish(){if(finished)return;finished=true;clearInterval(clock);entry.disabled=true;update();document.getElementById('status').innerHTML='<b>Session complete.</b> Restart when you are ready for another round.';const score=Number(document.getElementById('wpm').textContent);let best=Number(localStorage.getItem('ks-best-'+lang)||0);if(score>best)localStorage.setItem('ks-best-'+lang,score);document.getElementById('testSubtitle').textContent='Your session is complete — nice work.'}
-function reset(){clearInterval(clock);started=false;finished=false;left=duration;entry.disabled=false;entry.value='';document.getElementById('time').textContent=mode==='practice'?'∞':duration;document.getElementById('timeLabel').textContent=mode==='practice'?'FREE PRACTICE':'SECONDS LEFT';document.getElementById('status').innerHTML='<b>Ready when you are.</b> Click the text area and begin.';document.getElementById('testSubtitle').textContent=lang==='bn'?'বাংলা অনুশীলনের জন্য টাইপ করা শুরু করুন':'Choose a duration and start typing';document.getElementById('wpm').textContent='0';document.getElementById('accuracy').textContent='100%';draw()}
-entry.addEventListener('input',()=>{if(!started&&entry.value.length)begin();draw();update();if(entry.value.length>=passages[lang].length)finish()});
+function draw(){const typed=chars(entry.value),target=chars(currentText);passage.replaceChildren();target.forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch;if(i<typed.length)s.className=typed[i]===ch?'correct':'incorrect';else if(i===typed.length)s.className='cursor';passage.appendChild(s)});if(typed.length>=target.length){const cursor=document.createElement('span');cursor.className='cursor';cursor.textContent=' ';passage.appendChild(cursor)}}
+function update(){const typed=chars(entry.value),target=chars(currentText);let correct=0;typed.forEach((ch,i)=>{if(ch===target[i])correct++});const elapsed=Math.max(1,(Date.now()-startAt)/1000);const speed=lang==='bn'?Math.round(correct/elapsed*60):Math.round((correct/5)/(elapsed/60));document.getElementById('wpm').textContent=speed;document.getElementById('speedLabel').textContent=lang==='bn'?'CHARACTERS / MIN':'WORDS / MIN';document.getElementById('accuracy').textContent=(typed.length?Math.round(correct/typed.length*100):100)+'%'}
+function begin(){if(started||finished)return;started=true;startAt=Date.now();document.getElementById('status').innerHTML='<b>Test in progress.</b> Keep a steady rhythm.';if(mode==='timed')clock=setInterval(()=>{left=Math.max(0,left-1);document.getElementById('time').textContent=left;update();if(left<=0)finish()},1000)}
+function finish(){if(finished)return;finished=true;clearInterval(clock);entry.disabled=true;update();document.getElementById('status').innerHTML='<b>Session complete.</b> Restart when you are ready for another round.';const score=Number(document.getElementById('wpm').textContent);const key='ks-best-'+lang;let best=Number(localStorage.getItem(key)||0);if(score>best)localStorage.setItem(key,String(score));document.getElementById('testSubtitle').textContent='Your session is complete — nice work.'}
+function reset(){clearInterval(clock);started=false;finished=false;left=duration;entry.disabled=false;entry.value='';pickPassage();document.getElementById('time').textContent=mode==='practice'?'∞':duration;document.getElementById('timeLabel').textContent=mode==='practice'?'FREE PRACTICE':'SECONDS LEFT';document.getElementById('status').innerHTML='<b>Ready when you are.</b> Click the text area and begin.';document.getElementById('testSubtitle').textContent=lang==='bn'?'বাংলা অনুশীলনের জন্য টাইপ করা শুরু করুন':'Choose a duration and start typing';document.getElementById('wpm').textContent='0';document.getElementById('accuracy').textContent='100%';document.getElementById('speedLabel').textContent=lang==='bn'?'CHARACTERS / MIN':'WORDS / MIN';draw()}
+entry.addEventListener('input',()=>{if(!started&&entry.value.length)begin();draw();update();if(chars(entry.value).length>=chars(currentText).length)finish()});
 entry.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();entry.blur()}if(e.key==='Enter'&&entry.value.length===0){e.preventDefault();reset()}});
-function googleSignIn(){notify('Demo only: Firebase Google sign-in will be connected in the live version.')}
-reset();
-
+// Google sign-in is initialized below with Firebase Authentication.
+// Ratings are currently saved locally on this device.
 let selectedRating=0;
 const ratingButtons=[...document.querySelectorAll('.rating-star')];
-function paintRating(){ratingButtons.forEach((b,i)=>{b.classList.toggle('selected',i<selectedRating);b.setAttribute('aria-pressed',i<selectedRating?'true':'false')})}
-ratingButtons.forEach(b=>b.addEventListener('click',()=>{selectedRating=Number(b.dataset.rating);paintRating();document.getElementById('submitRating').disabled=false;document.getElementById('ratingStatus').textContent=`You selected ${selectedRating} out of 5 stars.`}));
-document.getElementById('submitRating').addEventListener('click',()=>{if(!selectedRating)return;localStorage.setItem('keystudio-rating',String(selectedRating));document.getElementById('ratingStatus').textContent='Thank you for rating Keystudio! Your rating is saved on this device.';notify('Thank you for your rating!')});
-const savedRating=Number(localStorage.getItem('keystudio-rating')||0);if(savedRating){selectedRating=savedRating;paintRating();document.getElementById('submitRating').disabled=false;document.getElementById('ratingStatus').textContent=`Your saved rating: ${savedRating} out of 5 stars.`}
-
+ratingButtons.forEach(btn=>btn.addEventListener('click',()=>{selectedRating=Number(btn.dataset.rating);ratingButtons.forEach(b=>b.classList.toggle('selected',Number(b.dataset.rating)<=selectedRating));document.getElementById('submitRating').disabled=false;document.getElementById('ratingNote').textContent=`You selected ${selectedRating} out of 5 stars.`}));
+document.getElementById('submitRating').addEventListener('click',()=>{if(!selectedRating)return;localStorage.setItem('keystudio-my-rating',String(selectedRating));document.getElementById('ratingNote').textContent='Thank you for your feedback! Your rating is saved on this device.';document.getElementById('submitRating').disabled=true;});
+const savedRating=Number(localStorage.getItem('keystudio-my-rating')||0);if(savedRating){selectedRating=savedRating;ratingButtons.forEach(b=>b.classList.toggle('selected',Number(b.dataset.rating)<=savedRating));document.getElementById('ratingNote').textContent=`Your saved rating: ${savedRating} out of 5 stars.`;document.getElementById('submitRating').disabled=true}
+reset();
 </script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBj7M4CYGuI3LkzP1UWAWLSHyJ9McXBBfw",
+  authDomain: "keystudio-2d099.firebaseapp.com",
+  projectId: "keystudio-2d099",
+  storageBucket: "keystudio-2d099.firebasestorage.app",
+  messagingSenderId: "448966646552",
+  appId: "1:448966646552:web:03c3bed58f7cdb541e9c6d",
+  measurementId: "G-WE4WCMPC6J"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+const signinButton = document.getElementById("signinButton");
+const userAvatar = document.getElementById("userAvatar");
+
+window.googleSignIn = async function () {
+  try {
+    if (auth.currentUser) {
+      await signOut(auth);
+      notify("You have signed out.");
+    } else {
+      try {
+        await signInWithPopup(auth, provider);
+      } catch (popupError) {
+        // On mobile browsers, a redirect is a reliable fallback when popups are blocked.
+        if (popupError.code === "auth/popup-blocked" || popupError.code === "auth/operation-not-supported-in-this-environment") {
+          await signInWithRedirect(auth, provider);
+          return;
+        }
+        throw popupError;
+      }
+    }
+  } catch (error) {
+    console.error("Firebase authentication error:", error);
+    const messages = {
+      "auth/unauthorized-domain": "This website domain is not authorised in Firebase. Check Authentication → Settings → Authorised domains.",
+      "auth/popup-closed-by-user": "Sign-in was cancelled. Please try again.",
+      "auth/network-request-failed": "Network error. Check your internet connection and try again.",
+      "auth/account-exists-with-different-credential": "An account already exists with a different sign-in method."
+    };
+    notify(messages[error.code] || "Google sign-in failed. Please try again.");
+  }
+};
+
+getRedirectResult(auth).catch((error) => {
+  console.error("Firebase redirect sign-in error:", error);
+  notify("Google sign-in could not be completed. Please try again.");
+});
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    signinButton.textContent = "Sign out";
+    userAvatar.textContent = (user.displayName || user.email || "U").trim().charAt(0).toUpperCase();
+    userAvatar.title = user.displayName || user.email || "Signed in";
+    userAvatar.setAttribute("aria-label", user.displayName || user.email || "Signed in");
+    notify("Signed in as " + (user.displayName || user.email));
+  } else {
+    signinButton.textContent = "Sign in with Google";
+    userAvatar.textContent = "G";
+    userAvatar.title = "Guest account";
+    userAvatar.setAttribute("aria-label", "Guest account");
+  }
+});
+</script>
+
 </body></html>
