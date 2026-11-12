@@ -43,6 +43,10 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#202a3a;color:white;padding:11px 16px;border-radius:9px;font-size:13px;box-shadow:0 8px 30px #0002;display:none;z-index:30}.toast.show{display:block}@keyframes blink{50%{opacity:0}}
 @media(max-width:720px){.wrap{padding:0 18px}.topbar{height:67px}.navlinks{display:none}.hero{padding:43px 0 28px}.testhead{align-items:flex-start;flex-direction:column}.settings{width:100%;justify-content:space-between}.settinglabel{display:none}.metrics{padding:18px 15px 15px}.typingarea{margin:0 14px 16px;padding:17px;min-height:180px}.passage{font-size:17px}.underrow{padding:0 15px 17px;align-items:flex-start;flex-direction:column}.buttons{width:100%}.buttons .btn{flex:1}.bottomgrid{grid-template-columns:1fr}.footerinner{flex-direction:column}.topactions{gap:5px}.signin{padding:8px 11px}}
 @media(max-width:390px){.hero h1{font-size:32px}.settings{gap:8px}.seg button{padding:7px 8px}.testhead{padding:18px}.metric strong{font-size:24px}}
+
+.history-panel{max-width:900px;margin:22px auto;background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}
+.history-panel h2{font-size:17px;margin:0 0 6px}.history-note{font-size:12px;color:#87909d;margin:0 0 14px}.history-list{display:grid;gap:9px}.history-item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 12px;border:1px solid #edf0f4;border-radius:10px;font-size:12px}.history-item strong{font-size:13px}.history-empty{font-size:13px;color:#87909d;padding:12px 0}
+@media(max-width:600px){.history-panel{padding:16px}.history-item{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
@@ -69,6 +73,11 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
   <h2 class="challenge-heading">Typing challenges</h2>
   <p class="challenge-intro">Choose an exercise and complete it in 60 seconds. Challenges work in guest mode too.</p>
   <div class="challenge-grid" id="challengeGrid"></div>
+</section>
+<section class="history-panel" id="historyPanel">
+  <h2>Your typing history</h2>
+  <p class="history-note" id="historyNote">Sign in with Google to save and view your results across devices.</p>
+  <div class="history-list" id="historyList"><div class="history-empty">No saved results yet.</div></div>
 </section>
 </main>
 <section class="about-section" id="about">
@@ -142,7 +151,7 @@ function switchMode(m){mode=m;document.getElementById('timedMode').classList.tog
 function draw(){const typed=chars(entry.value),target=chars(currentText);passage.replaceChildren();target.forEach((ch,i)=>{const s=document.createElement('span');s.textContent=ch;if(i<typed.length)s.className=typed[i]===ch?'correct':'incorrect';else if(i===typed.length)s.className='cursor';passage.appendChild(s)});if(typed.length>=target.length){const cursor=document.createElement('span');cursor.className='cursor';cursor.textContent=' ';passage.appendChild(cursor)}}
 function update(){const typed=chars(entry.value),target=chars(currentText);let correct=0;typed.forEach((ch,i)=>{if(ch===target[i])correct++});const elapsed=Math.max(1,(Date.now()-startAt)/1000);const speed=lang==='bn'?Math.round(correct/elapsed*60):Math.round((correct/5)/(elapsed/60));document.getElementById('wpm').textContent=speed;document.getElementById('speedLabel').textContent=lang==='bn'?'CHARACTERS / MIN':'WORDS / MIN';document.getElementById('accuracy').textContent=(typed.length?Math.round(correct/typed.length*100):100)+'%'}
 function begin(){if(started||finished)return;started=true;startAt=Date.now();document.getElementById('status').innerHTML='<b>Test in progress.</b> Keep a steady rhythm.';if(mode==='timed')clock=setInterval(()=>{left=Math.max(0,left-1);document.getElementById('time').textContent=left;update();if(left<=0)finish()},1000)}
-function finish(){if(finished)return;finished=true;clearInterval(clock);entry.disabled=true;update();document.getElementById('status').innerHTML='<b>Session complete.</b> Restart when you are ready for another round.';const score=Number(document.getElementById('wpm').textContent);const key='ks-best-'+lang;let best=Number(localStorage.getItem(key)||0);if(score>best)localStorage.setItem(key,String(score));document.getElementById('testSubtitle').textContent='Your session is complete — nice work.'}
+function finish(){if(finished)return;finished=true;clearInterval(clock);entry.disabled=true;update();document.getElementById('status').innerHTML='<b>Session complete.</b> Restart when you are ready for another round.';const score=Number(document.getElementById('wpm').textContent);const key='ks-best-'+lang;let best=Number(localStorage.getItem(key)||0);if(score>best)localStorage.setItem(key,String(score));document.getElementById('testSubtitle').textContent='Your session is complete — nice work.';if(window.saveTypingResult){window.saveTypingResult({wpm:score,accuracy:Number(document.getElementById('accuracy').textContent.replace('%','')),language:lang,duration:duration,mode:mode})}}
 function reset(){clearInterval(clock);started=false;finished=false;left=duration;entry.disabled=false;entry.value='';pickPassage();document.getElementById('time').textContent=mode==='practice'?'∞':duration;document.getElementById('timeLabel').textContent=mode==='practice'?'FREE PRACTICE':'SECONDS LEFT';document.getElementById('status').innerHTML='<b>Ready when you are.</b> Click the text area and begin.';document.getElementById('testSubtitle').textContent=lang==='bn'?'বাংলা অনুশীলনের জন্য টাইপ করা শুরু করুন':'Choose a duration and start typing';document.getElementById('wpm').textContent='0';document.getElementById('accuracy').textContent='100%';document.getElementById('speedLabel').textContent=lang==='bn'?'CHARACTERS / MIN':'WORDS / MIN';draw()}
 entry.addEventListener('input',()=>{if(!started&&entry.value.length)begin();draw();update();if(chars(entry.value).length>=chars(currentText).length)finish()});
 entry.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();entry.blur()}if(e.key==='Enter'&&entry.value.length===0){e.preventDefault();reset()}});
@@ -159,6 +168,7 @@ reset();
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getFirestore, doc, setDoc, collection, addDoc, query, where, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBj7M4CYGuI3LkzP1UWAWLSHyJ9McXBBfw",
@@ -172,6 +182,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 const signinButton = document.getElementById("signinButton");
@@ -206,6 +217,58 @@ window.googleSignIn = async function () {
   }
 };
 
+const historyNote = document.getElementById("historyNote");
+const historyList = document.getElementById("historyList");
+
+function showHistoryMessage(message) {
+  historyList.innerHTML = "";
+  const item = document.createElement("div");
+  item.className = "history-empty";
+  item.textContent = message;
+  historyList.appendChild(item);
+}
+
+async function loadTypingHistory(user) {
+  historyNote.textContent = "Your saved results are synced to your account.";
+  try {
+    const q = query(collection(db, "results"), where("uid", "==", user.uid));
+    const snapshot = await getDocs(q);
+    const rows = snapshot.docs.map(d => d.data()).sort((a,b) => (b.createdAt?.toMillis?.() || 0) - (a.createdAt?.toMillis?.() || 0)).slice(0,10);
+    historyList.innerHTML = "";
+    if (!rows.length) { showHistoryMessage("No saved results yet. Complete a typing test to save your first result."); return; }
+    rows.forEach(r => {
+      const item = document.createElement("div"); item.className = "history-item";
+      const left = document.createElement("strong"); left.textContent = `${r.wpm ?? 0} ${r.language === "bn" ? "CPM" : "WPM"} · ${r.accuracy ?? 0}% accuracy`;
+      const right = document.createElement("span"); right.textContent = `${r.language === "bn" ? "বাংলা" : "English"} · ${r.duration ?? 0}s · ${r.mode === "practice" ? "Practice" : "Timed"}`;
+      item.append(left,right); historyList.appendChild(item);
+    });
+  } catch (error) {
+    console.error("Could not load typing history:", error);
+    showHistoryMessage("Could not load history. Please refresh and try again.");
+  }
+}
+
+window.saveTypingResult = async function(result) {
+  const user = auth.currentUser;
+  if (!user) { notify("Sign in to save your typing results across devices."); return; }
+  try {
+    await addDoc(collection(db, "results"), {
+      uid: user.uid,
+      wpm: Number(result.wpm) || 0,
+      accuracy: Number(result.accuracy) || 0,
+      language: result.language === "bn" ? "bn" : "en",
+      duration: Number(result.duration) || 0,
+      mode: result.mode === "practice" ? "practice" : "timed",
+      createdAt: serverTimestamp()
+    });
+    notify("Typing result saved to your account.");
+    await loadTypingHistory(user);
+  } catch (error) {
+    console.error("Could not save typing result:", error);
+    notify("Could not save result. Check your connection and try again.");
+  }
+};
+
 getRedirectResult(auth).catch((error) => {
   console.error("Firebase redirect sign-in error:", error);
   notify("Google sign-in could not be completed. Please try again.");
@@ -218,7 +281,16 @@ onAuthStateChanged(auth, (user) => {
     userAvatar.title = user.displayName || user.email || "Signed in";
     userAvatar.setAttribute("aria-label", user.displayName || user.email || "Signed in");
     notify("Signed in as " + (user.displayName || user.email));
+    setDoc(doc(db, "users", user.uid), {
+      displayName: user.displayName || "",
+      email: user.email || "",
+      photoURL: user.photoURL || "",
+      updatedAt: serverTimestamp()
+    }, { merge: true }).catch(error => console.error("Could not update user profile:", error));
+    loadTypingHistory(user);
   } else {
+    historyNote.textContent = "Sign in with Google to save and view your results across devices.";
+    showHistoryMessage("No saved results yet.");
     signinButton.textContent = "Sign in with Google";
     userAvatar.textContent = "G";
     userAvatar.title = "Guest account";
