@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f7f8fa">
 <title>Keystudio — Typing Practice</title>
 <style>
@@ -15,44 +16,21 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
 .typingarea{margin:0 25px 20px;border:1px solid #e5e8ee;border-radius:11px;background:#fbfcfd;padding:22px 23px;min-height:160px;position:relative;transition:border-color .2s,box-shadow .2s}.typingarea:focus-within{border-color:#aabaff;box-shadow:0 0 0 3px #315efb0b}.passage{font-size:19px;line-height:1.95;letter-spacing:.05px;color:#a0a7b2;user-select:none;overflow-wrap:anywhere}.passage .correct{color:#222b39}.passage .incorrect{color:var(--red);background:#fff0f0;border-radius:2px}.passage .cursor{border-left:2px solid var(--accent);margin-left:-1px;animation:blink 1s step-end infinite}.typingarea textarea{position:absolute;inset:0;width:100%;height:100%;opacity:0;resize:none;border:0;outline:0;cursor:text}
 .underrow{display:flex;justify-content:space-between;align-items:center;padding:0 26px 21px;gap:15px}.status{font-size:12px;color:#8993a1}.status b{color:#515c6b;font-weight:650}.buttons{display:flex;align-items:center;gap:9px}.btn{border-radius:8px;padding:10px 15px;font-size:12px;font-weight:750;border:1px solid #e0e4eb;background:white;color:#495364}.btn:hover{background:#f7f8fa}.btn.primary{background:var(--accent);border-color:var(--accent);color:white;padding:10px 18px}.btn.primary:hover{background:var(--accent2)}
 .bottomgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}.info{background:white;border:1px solid var(--line);border-radius:12px;padding:17px 19px;display:flex;align-items:flex-start;gap:13px}.infoicon{width:32px;height:32px;border-radius:9px;background:#f0f3ff;color:var(--accent);display:grid;place-items:center;flex-shrink:0;font-weight:800}.info strong{font-size:13px;display:block}.info p{font-size:12px;color:#87909d;margin:3px 0 0}.info a{color:var(--accent);text-decoration:none;font-weight:700}
-
-.about-section{max-width:900px;margin:0 auto 58px;scroll-margin-top:100px}
-.about-card{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:clamp(22px,4vw,36px)}
-.about-kicker{font-size:10px;text-transform:uppercase;letter-spacing:1.7px;color:var(--accent);font-weight:800}
-.about-card h2{font-size:clamp(25px,4vw,32px);letter-spacing:-1px;margin:8px 0 12px}
-.about-card p{color:#737d8b;font-size:14px;line-height:1.85;margin:0 0 13px}
-.about-card p strong{color:#303949}
-.about-divider{height:1px;background:var(--line);margin:25px 0}
-.rating-title{font-size:15px;font-weight:750;margin-bottom:5px}
-.rating-copy{font-size:12px!important;margin-bottom:12px!important}
-.rating-stars{display:flex;align-items:center;gap:7px;margin:9px 0 14px}
-.rating-star{border:0;background:#f3f5f8;color:#b8c0cc;width:43px;height:43px;border-radius:10px;font-size:25px;line-height:1;transition:transform .15s,background .15s,color .15s}
-.rating-star:hover{transform:translateY(-2px)}.rating-star.selected{color:#f0a629;background:#fff7e8}
-.rating-submit{border:0;background:var(--accent);color:#fff;border-radius:8px;padding:10px 17px;font-size:12px;font-weight:750}
-.rating-submit:disabled{opacity:.45;cursor:not-allowed}
-.rating-note{font-size:11px;color:#8b94a1;margin-top:9px;min-height:18px}
-.contact-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:13px}
-.contact-link{display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #e5e8ee;border-radius:9px;color:#465164;text-decoration:none;font-size:12px;font-weight:700;background:#fff}
-.contact-link:hover{border-color:#b8c5ff;color:var(--accent)}
-
-.challenge-panel{max-width:900px;margin:0 auto 22px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}
-.challenge-panel.hidden{display:none}.challenge-heading{font-size:17px;font-weight:760;margin:0 0 5px}.challenge-intro{font-size:12px;color:#87909d;margin:0 0 17px}.challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.challenge-card{border:1px solid #e5e8ee;border-radius:11px;padding:16px;background:#fff}.challenge-card h3{font-size:13px;margin:0 0 6px}.challenge-card p{font-size:12px;color:#87909d;min-height:38px;margin:0 0 13px}.challenge-card button{border:0;border-radius:8px;background:var(--accent);color:#fff;padding:9px 12px;font-size:12px;font-weight:750;width:100%}.challenge-card button:hover{background:var(--accent2)}
-@media(max-width:720px){.challenge-grid{grid-template-columns:1fr}.challenge-panel{padding:17px;margin-bottom:18px}}
-@media(max-width:720px){.about-section{margin-bottom:40px}.about-card{padding:22px 19px}.rating-star{width:41px;height:41px}.contact-list{display:grid;grid-template-columns:1fr}.contact-link{width:100%}}
-.footer{border-top:1px solid var(--line);padding:23px 0 30px;color:#9aa2ad;font-size:11px}.footerinner{display:flex;justify-content:space-between;gap:15px}
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#202a3a;color:white;padding:11px 16px;border-radius:9px;font-size:13px;box-shadow:0 8px 30px #0002;display:none;z-index:30}.toast.show{display:block}@keyframes blink{50%{opacity:0}}
+.about-section{max-width:900px;margin:0 auto 58px;scroll-margin-top:100px}.about-card{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);padding:clamp(22px,4vw,36px)}.about-kicker{font-size:10px;text-transform:uppercase;letter-spacing:1.7px;color:var(--accent);font-weight:800}.about-card h2{font-size:clamp(25px,4vw,32px);letter-spacing:-1px;margin:8px 0 12px}.about-card p{color:#737d8b;font-size:14px;line-height:1.85;margin:0 0 13px}.about-card p strong{color:#303949}.about-divider{height:1px;background:var(--line);margin:25px 0}.rating-title{font-size:15px;font-weight:750;margin-bottom:5px}.rating-copy{font-size:12px!important;margin-bottom:12px!important}.rating-stars{display:flex;align-items:center;gap:7px;margin:9px 0 14px}.rating-star{border:0;background:#f3f5f8;color:#b8c0cc;width:43px;height:43px;border-radius:10px;font-size:25px;line-height:1;transition:transform .15s,background .15s,color .15s}.rating-star:hover{transform:translateY(-2px)}.rating-star.selected{color:#f0a629;background:#fff7e8}.rating-submit{border:0;background:var(--accent);color:#fff;border-radius:8px;padding:10px 17px;font-size:12px;font-weight:750}.rating-submit:disabled{opacity:.45;cursor:not-allowed}.rating-note{font-size:11px;color:#8b94a1;margin-top:9px;min-height:18px}.contact-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:13px}.contact-link{display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #e5e8ee;border-radius:9px;color:#465164;text-decoration:none;font-size:12px;font-weight:700;background:#fff}.contact-link:hover{border-color:#b8c5ff;color:var(--accent)}
+.challenge-panel{max-width:900px;margin:0 auto 22px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}.challenge-panel.hidden{display:none}.challenge-heading{font-size:17px;font-weight:760;margin:0 0 5px}.challenge-intro{font-size:12px;color:#87909d;margin:0 0 17px}.challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.challenge-card{border:1px solid #e5e8ee;border-radius:11px;padding:16px;background:#fff}.challenge-card h3{font-size:13px;margin:0 0 6px}.challenge-card p{font-size:12px;color:#87909d;min-height:38px;margin:0 0 13px}.challenge-card button{border:0;border-radius:8px;background:var(--accent);color:#fff;padding:9px 12px;font-size:12px;font-weight:750;width:100%}.challenge-card button:hover{background:var(--accent2)}
+@media(max-width:720px){.challenge-grid{grid-template-columns:1fr}.challenge-panel{padding:17px;margin-bottom:18px}.about-section{margin-bottom:40px}.about-card{padding:22px 19px}.rating-star{width:41px;height:41px}.contact-list{display:grid;grid-template-columns:1fr}.contact-link{width:100%}}
+.footer{border-top:1px solid var(--line);padding:23px 0 30px;color:#9aa2ad;font-size:11px}.footerinner{display:flex;justify-content:space-between;gap:15px}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#202a3a;color:white;padding:11px 16px;border-radius:9px;font-size:13px;box-shadow:0 8px 30px #0002;display:none;z-index:30}.toast.show{display:block}@keyframes blink{50%{opacity:0}}
 @media(max-width:720px){.wrap{padding:0 18px}.topbar{height:67px}.navlinks{display:none}.hero{padding:43px 0 28px}.testhead{align-items:flex-start;flex-direction:column}.settings{width:100%;justify-content:space-between}.settinglabel{display:none}.metrics{padding:18px 15px 15px}.typingarea{margin:0 14px 16px;padding:17px;min-height:180px}.passage{font-size:17px}.underrow{padding:0 15px 17px;align-items:flex-start;flex-direction:column}.buttons{width:100%}.buttons .btn{flex:1}.bottomgrid{grid-template-columns:1fr}.footerinner{flex-direction:column}.topactions{gap:5px}.signin{padding:8px 11px}}
 @media(max-width:390px){.hero h1{font-size:32px}.settings{gap:8px}.seg button{padding:7px 8px}.testhead{padding:18px}.metric strong{font-size:24px}}
-
-.history-panel{max-width:900px;margin:22px auto;background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}
-.history-panel h2{font-size:17px;margin:0 0 6px}.history-note{font-size:12px;color:#87909d;margin:0 0 14px}.history-list{display:grid;gap:9px}.history-item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 12px;border:1px solid #edf0f4;border-radius:10px;font-size:12px}.history-item strong{font-size:13px}.history-empty{font-size:13px;color:#87909d;padding:12px 0}
-@media(max-width:600px){.history-panel{padding:16px}.history-item{align-items:flex-start;flex-direction:column}}
+.history-panel{max-width:900px;margin:22px auto;background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}.history-panel h2{font-size:17px;margin:0 0 6px}.history-note{font-size:12px;color:#87909d;margin:0 0 14px}.history-list{display:grid;gap:9px}.history-item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 12px;border:1px solid #edf0f4;border-radius:10px;font-size:12px}.history-item strong{font-size:13px}.history-empty{font-size:13px;color:#87909d;padding:12px 0}
+.leaderboard-panel{max-width:900px;margin:22px auto;background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow)}.leaderboard-panel h2{font-size:17px;margin:0 0 5px}.leaderboard-note{font-size:12px;color:#87909d;margin:0 0 16px}.leaderboard-tabs{display:flex;gap:8px;margin-bottom:15px}.leaderboard-tabs button{border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;color:#687286}.leaderboard-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}.leader-row{display:grid;grid-template-columns:45px 1fr auto;gap:12px;align-items:center;padding:12px;border-bottom:1px solid #edf0f4;font-size:12px}.leader-rank{font-weight:800;color:var(--accent)}.leader-player{font-weight:750}.leader-score{text-align:right;font-weight:750}.leader-empty{padding:16px 0;color:#87909d;font-size:13px}
+@media(max-width:600px){.history-panel{padding:16px}.history-item{align-items:flex-start;flex-direction:column}.leaderboard-panel{padding:16px}.leader-row{grid-template-columns:30px 1fr auto;gap:8px}}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="wrap topinner">
 <a class="brand" href="#"><span class="brandmark">K.</span> keystudio</a>
-<nav class="navlinks"><a class="active" href="#test">Typing test</a><a href="#practice" onclick="switchMode('practice');return false">Practice</a><a href="#challenges" onclick="showChallenges();return false">Challenges</a><a href="#about">About</a></nav>
+<nav class="navlinks"><a class="active" href="#test">Typing test</a><a href="#practice" onclick="switchMode('practice');return false">Practice</a><a href="#challenges" onclick="showChallenges();return false">Challenges</a><a href="#leaderboard">Leaderboard</a><a href="#about">About</a></nav>
 <div class="topactions"><div class="selectwrap"><select class="lang" id="language" aria-label="Interface language" onchange="changeLanguage(this.value)"><option value="en">English</option><option value="bn">বাংলা</option></select></div><button class="signin" id="signinButton" onclick="googleSignIn()">Sign in with Google</button><div class="avatar" id="userAvatar" title="Guest account">G</div></div>
 </div></header>
 <main class="wrap">
@@ -79,6 +57,15 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
   <p class="history-note" id="historyNote">Sign in with Google to save and view your results across devices.</p>
   <div class="history-list" id="historyList"><div class="history-empty">No saved results yet.</div></div>
 </section>
+<section class="leaderboard-panel" id="leaderboard">
+  <h2>Global Leaderboard</h2>
+  <p class="leaderboard-note">Community Scores · Unverified · Top 10 Players</p>
+  <div class="leaderboard-tabs">
+    <button class="active" id="englishRank" onclick="showLeaderboard('English')">English</button>
+    <button id="bengaliRank" onclick="showLeaderboard('Bengali')">বাংলা</button>
+  </div>
+  <div id="leaderboardList"><div class="leader-empty">Sign in and complete a timed test to appear here.</div></div>
+</section>
 </main>
 <section class="about-section" id="about">
   <div class="about-card">
@@ -91,11 +78,7 @@ button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1160px;margin:a
     <div class="rating-title">Enjoying the website?</div>
     <p class="rating-copy">If you've used Keystudio, I'd really appreciate your rating. Your feedback is a little motivation that inspires me to keep learning, improving, and building better things. Thank you for being here!</p>
     <div class="rating-stars" role="group" aria-label="Rate this website from one to five stars">
-      <button class="rating-star" type="button" data-rating="1" aria-label="1 star">★</button>
-      <button class="rating-star" type="button" data-rating="2" aria-label="2 stars">★</button>
-      <button class="rating-star" type="button" data-rating="3" aria-label="3 stars">★</button>
-      <button class="rating-star" type="button" data-rating="4" aria-label="4 stars">★</button>
-      <button class="rating-star" type="button" data-rating="5" aria-label="5 stars">★</button>
+      <button class="rating-star" type="button" data-rating="1" aria-label="1 star">★</button><button class="rating-star" type="button" data-rating="2" aria-label="2 stars">★</button><button class="rating-star" type="button" data-rating="3" aria-label="3 stars">★</button><button class="rating-star" type="button" data-rating="4" aria-label="4 stars">★</button><button class="rating-star" type="button" data-rating="5" aria-label="5 stars">★</button>
     </div>
     <button class="rating-submit" id="submitRating" type="button" disabled>Submit rating</button>
     <div class="rating-note" id="ratingNote" aria-live="polite">Choose between 1 and 5 stars.</div>
@@ -143,7 +126,6 @@ const challengeSets={
 function showChallenges(){document.getElementById('challengesPanel').classList.remove('hidden');document.getElementById('challengesPanel').scrollIntoView({behavior:'smooth',block:'start'});renderChallenges()}
 function renderChallenges(){const grid=document.getElementById('challengeGrid');grid.innerHTML='';challengeSets[lang].forEach((c,i)=>{const card=document.createElement('article');card.className='challenge-card';const h=document.createElement('h3');h.textContent=c.title;const p=document.createElement('p');p.textContent=c.level+' · '+c.desc;const b=document.createElement('button');b.type='button';b.textContent='Start challenge';b.addEventListener('click',()=>loadChallenge(i));card.append(h,p,b);grid.append(card)})}
 function loadChallenge(i){const c=challengeSets[lang][i];document.getElementById('challengesPanel').classList.add('hidden');document.getElementById('test').scrollIntoView({behavior:'smooth',block:'start'});mode='timed';duration=60;document.getElementById('timedMode').classList.add('active');document.getElementById('practiceMode').classList.remove('active');document.getElementById('duration').style.opacity='1';document.getElementById('duration').style.pointerEvents='auto';document.querySelectorAll('#duration button').forEach(b=>b.classList.toggle('active',b.textContent.trim()==='60 sec'));reset();currentText=c.text;draw();document.getElementById('testSubtitle').textContent=c.title+' challenge · '+c.level+' · 60 seconds';notify(c.title+' challenge loaded. Start typing!')}
-
 function pickPassage(){const list=passages[lang];let i=Math.floor(Math.random()*list.length);if(list.length>1&&i===lastPassage)i=(i+1)%list.length;lastPassage=i;currentText=list[i]}
 function changeLanguage(v){lang=v;reset();if(!document.getElementById("challengesPanel").classList.contains("hidden"))renderChallenges()}
 function setDuration(n,el){duration=n;document.querySelectorAll('#duration button').forEach(b=>b.classList.remove('active'));el.classList.add('active');reset()}
@@ -155,8 +137,6 @@ function finish(){if(finished)return;finished=true;clearInterval(clock);entry.di
 function reset(){clearInterval(clock);started=false;finished=false;left=duration;entry.disabled=false;entry.value='';pickPassage();document.getElementById('time').textContent=mode==='practice'?'∞':duration;document.getElementById('timeLabel').textContent=mode==='practice'?'FREE PRACTICE':'SECONDS LEFT';document.getElementById('status').innerHTML='<b>Ready when you are.</b> Click the text area and begin.';document.getElementById('testSubtitle').textContent=lang==='bn'?'বাংলা অনুশীলনের জন্য টাইপ করা শুরু করুন':'Choose a duration and start typing';document.getElementById('wpm').textContent='0';document.getElementById('accuracy').textContent='100%';document.getElementById('speedLabel').textContent=lang==='bn'?'CHARACTERS / MIN':'WORDS / MIN';draw()}
 entry.addEventListener('input',()=>{if(!started&&entry.value.length)begin();draw();update();if(chars(entry.value).length>=chars(currentText).length)finish()});
 entry.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();entry.blur()}if(e.key==='Enter'&&entry.value.length===0){e.preventDefault();reset()}});
-// Google sign-in is initialized below with Firebase Authentication.
-// Ratings are currently saved locally on this device.
 let selectedRating=0;
 const ratingButtons=[...document.querySelectorAll('.rating-star')];
 ratingButtons.forEach(btn=>btn.addEventListener('click',()=>{selectedRating=Number(btn.dataset.rating);ratingButtons.forEach(b=>b.classList.toggle('selected',Number(b.dataset.rating)<=selectedRating));document.getElementById('submitRating').disabled=false;document.getElementById('ratingNote').textContent=`You selected ${selectedRating} out of 5 stars.`}));
@@ -197,7 +177,6 @@ window.googleSignIn = async function () {
       try {
         await signInWithPopup(auth, provider);
       } catch (popupError) {
-        // On mobile browsers, a redirect is a reliable fallback when popups are blocked.
         if (popupError.code === "auth/popup-blocked" || popupError.code === "auth/operation-not-supported-in-this-environment") {
           await signInWithRedirect(auth, provider);
           return;
@@ -219,6 +198,51 @@ window.googleSignIn = async function () {
 
 const historyNote = document.getElementById("historyNote");
 const historyList = document.getElementById("historyList");
+const leaderboardList = document.getElementById("leaderboardList");
+let leaderboardLanguage = "English";
+
+window.showLeaderboard = async function(language) {
+  leaderboardLanguage = language;
+  document.getElementById("englishRank").classList.toggle("active", language === "English");
+  document.getElementById("bengaliRank").classList.toggle("active", language === "Bengali");
+  leaderboardList.innerHTML = '<div class="leader-empty">Loading scores...</div>';
+
+  try {
+    const snapshot = await getDocs(collection(db, "leaderboard"));
+    const rows = snapshot.docs
+      .map(d => d.data())
+      .filter(r => r.language === language)
+      .sort((a, b) => Number(b.wpm || 0) - Number(a.wpm || 0))
+      .slice(0, 10);
+
+    leaderboardList.innerHTML = "";
+    if (!rows.length) {
+      leaderboardList.innerHTML = '<div class="leader-empty">No scores yet. Be the first to join!</div>';
+      return;
+    }
+
+    rows.forEach((r, i) => {
+      const item = document.createElement("div");
+      item.className = "leader-row";
+      const rank = document.createElement("span");
+      rank.className = "leader-rank";
+      rank.textContent = "#" + (i + 1);
+      const player = document.createElement("span");
+      player.className = "leader-player";
+      player.textContent = r.player || "Anonymous Player";
+      const score = document.createElement("span");
+      score.className = "leader-score";
+      score.textContent = Math.round(Number(r.wpm) || 0) +
+        (language === "Bengali" ? " CPM" : " WPM") +
+        " · " + Math.round(Number(r.accuracy) || 0) + "%";
+      item.append(rank, player, score);
+      leaderboardList.appendChild(item);
+    });
+  } catch (error) {
+    console.error("Leaderboard error:", error);
+    leaderboardList.innerHTML = '<div class="leader-empty">Could not load leaderboard. Please refresh.</div>';
+  }
+};
 
 function showHistoryMessage(message) {
   historyList.innerHTML = "";
@@ -251,6 +275,7 @@ async function loadTypingHistory(user) {
 window.saveTypingResult = async function(result) {
   const user = auth.currentUser;
   if (!user) { notify("Sign in to save your typing results across devices."); return; }
+
   try {
     await addDoc(collection(db, "results"), {
       uid: user.uid,
@@ -261,8 +286,22 @@ window.saveTypingResult = async function(result) {
       mode: result.mode === "practice" ? "practice" : "timed",
       createdAt: serverTimestamp()
     });
+
+    // Only timed tests are added to the public community leaderboard.
+    if (result.mode !== "practice") {
+      await addDoc(collection(db, "leaderboard"), {
+        uid: user.uid,
+        player: "Player-" + user.uid.slice(0, 5).toUpperCase(),
+        wpm: Math.min(300, Math.max(0, Number(result.wpm) || 0)),
+        accuracy: Math.min(100, Math.max(0, Number(result.accuracy) || 0)),
+        language: result.language === "bn" ? "Bengali" : "English",
+        createdAt: serverTimestamp()
+      });
+    }
+
     notify("Typing result saved to your account.");
     await loadTypingHistory(user);
+    await window.showLeaderboard(leaderboardLanguage);
   } catch (error) {
     console.error("Could not save typing result:", error);
     notify("Could not save result. Check your connection and try again.");
@@ -278,9 +317,8 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     signinButton.textContent = "Sign out";
     userAvatar.textContent = (user.displayName || user.email || "U").trim().charAt(0).toUpperCase();
-    userAvatar.title = user.displayName || user.email || "Signed in";
-    userAvatar.setAttribute("aria-label", user.displayName || user.email || "Signed in");
-    notify("Signed in as " + (user.displayName || user.email));
+    userAvatar.title = "Signed in";
+    userAvatar.setAttribute("aria-label", "Signed in");
     setDoc(doc(db, "users", user.uid), {
       displayName: user.displayName || "",
       email: user.email || "",
@@ -297,6 +335,8 @@ onAuthStateChanged(auth, (user) => {
     userAvatar.setAttribute("aria-label", "Guest account");
   }
 });
-</script>
 
-</body></html>
+window.showLeaderboard("English");
+</script>
+</body>
+</html>
